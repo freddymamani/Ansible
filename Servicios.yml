@@ -1,6 +1,6 @@
 ---
 - name: Install packages
-  hosts: production
+  hosts: 192.168.30.216
   vars:
     webpackages:
      - httpd
