@@ -1,0 +1,22 @@
+---
+- name: configure yum repository
+  hosts: 192.168.30.216
+  tasks:
+     - name: configure yum local repo
+       yum_repository:
+           file: BaseOS
+           name: BaseOS
+           description: local yum repo
+           enabled: yes
+           gpgcheck: yes
+           baseurl: http://192.168.30.210/rpm/BaseOS
+           
+     - name: Appstream
+       yum_repository:
+           file: AppStream
+           name: AppStream
+           description: AppStream
+           enabled: yes
+           gpgcheck: yes
+           baseurl: http://192.168.30.210/rpm/AppStream
+           state: present
